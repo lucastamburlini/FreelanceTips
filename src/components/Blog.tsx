@@ -1,6 +1,8 @@
 import Swal from "sweetalert2";
+import { v4 as uuidv4 } from "uuid";
 
 interface BlogItem {
+  id: string;
   author: string;
   date: string;
   title: string;
@@ -11,6 +13,7 @@ interface BlogItem {
 
 const blogs: BlogItem[] = [
   {
+    id: uuidv4(),
     author: "Leslie Alexander",
     date: "2023-01-23T13:23Z",
     title: "Consejos para Freelancers: Cómo Organizar tu Tiempo Efectivamente",
@@ -20,6 +23,7 @@ const blogs: BlogItem[] = [
     tags: ["Productividad", "Freelance", "Trabajo Remoto"],
   },
   {
+    id: uuidv4(),
     author: "Michael Foster",
     date: "2023-02-15T10:45Z",
     title: "Herramientas Esenciales para Freelancers de Desarrollo de Software",
@@ -29,6 +33,7 @@ const blogs: BlogItem[] = [
     tags: ["Freelance", "Desarrollo de Software", "Productividad"],
   },
   {
+    id: uuidv4(),
     author: "Dries Vincent",
     date: "2023-03-05T08:30Z",
     title: "Diseño Freelance: Principios Básicos de UI/UX",
@@ -38,6 +43,7 @@ const blogs: BlogItem[] = [
     tags: ["Freelance", "UI", "UX", "Diseño Gráfico"],
   },
   {
+    id: uuidv4(),
     author: "Lindsay Walton",
     date: "2023-04-10T15:20Z",
     title: "Cómo Conseguir Clientes como Freelancer de Desarrollo Web",
@@ -47,6 +53,7 @@ const blogs: BlogItem[] = [
     tags: ["Freelance", "Desarrollo Web", "Clientes"],
   },
   {
+    id: uuidv4(),
     author: "Courtney Henry",
     date: "2023-05-20T11:10Z",
     title: "Estrategias de Marketing para Freelancers de Tecnología",
@@ -56,6 +63,7 @@ const blogs: BlogItem[] = [
     tags: ["Freelance", "Tecnología", "Marketing Digital"],
   },
   {
+    id: uuidv4(),
     author: "Tom Cook",
     date: "2023-06-30T09:05Z",
     title:
@@ -72,7 +80,7 @@ const sortedBlogs = [...blogs].sort((a, b) => {
 });
 
 const Blog: React.FC = () => {
-  const handleVerMasClick = () => {
+  const handleMasClick = () => {
     Swal.fire({
       icon: "warning",
       title: "En construcción",
@@ -88,7 +96,7 @@ const Blog: React.FC = () => {
       <div className="flex w-full items-center justify-center">
         <button
           className="group relative inline-block focus:outline-none focus:ring-0"
-          onClick={handleVerMasClick}
+          onClick={handleMasClick}
         >
           <span className="absolute inset-0 translate-x-0 translate-y-0 rounded bg-green-300 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"></span>
 
@@ -143,8 +151,8 @@ const Blog: React.FC = () => {
                   {blog.content}
                 </p>
                 <div className="flex gap-2 text-xs leading-5 text-gray-500">
-                  {blog.tags.map((tag) => (
-                    <span>#{tag}</span>
+                  {blog.tags.map((tag, index) => (
+                    <span key={index}>#{tag}</span>
                   ))}
                 </div>
               </div>
@@ -155,7 +163,7 @@ const Blog: React.FC = () => {
       <div className="flex w-full items-center justify-center">
         <button
           className="group relative inline-block focus:outline-none focus:ring-0"
-          onClick={handleVerMasClick}
+          onClick={handleMasClick}
         >
           <span className="absolute inset-0 translate-x-0 translate-y-0 rounded bg-green-300 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"></span>
 

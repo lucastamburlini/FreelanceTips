@@ -11,7 +11,7 @@ function App() {
   const location = useLocation();
 
   const showFooter = () => {
-    return ["/", "/contact"].includes(location.pathname);
+    return ["/"].includes(location.pathname);
   };
 
   return (

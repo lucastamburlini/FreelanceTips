@@ -9,7 +9,7 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="h-16">
+    <nav className="relative z-50 h-16 bg-white">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="flex items-center flex-shrink-0 bg-white">
@@ -22,19 +22,19 @@ const NavBar: React.FC = () => {
             <div className="flex space-x-4">
               <Link
                 to={"/"}
-                className="hover:bg-blue-700 bg-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700  hover:text-white rounded-md px-3 py-2 text-sm font-medium"
               >
                 Inicio
               </Link>
               <Link
                 to={"/blog"}
-                className="hover:bg-blue-700 bg-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700  hover:text-white rounded-md px-3 py-2 text-sm font-medium"
               >
                 Blog
               </Link>
               <Link
                 to={"/contact"}
-                className="hover:bg-blue-700 bg-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700  hover:text-white rounded-md px-3 py-2 text-sm font-medium"
               >
                 Contacto
               </Link>
@@ -86,7 +86,7 @@ const NavBar: React.FC = () => {
         className={`${isMenuOpen ? "block" : "hidden"} sm:hidden bg-white`}
         id="mobile-menu"
       >
-        <div className="space-y-1 px-2 pb-3 pt-2">
+        <div className="space-y-1 px-2 pb-3 pt-2 z-20">
           <Link
             to={"/"}
             className="block hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
