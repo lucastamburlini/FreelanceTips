@@ -84,7 +84,19 @@ const Blog: React.FC = () => {
   };
 
   return (
-    <section className="mx-auto py-16 max-w-7xl px-2 sm:px-6 lg:px-8 flex flex-col gap-10">
+    <section className="mx-auto py-14 max-w-7xl px-2 sm:px-6 lg:px-8 flex flex-col gap-10">
+      <div className="flex w-full items-center justify-center">
+        <button
+          className="group relative inline-block focus:outline-none focus:ring-0"
+          onClick={handleVerMasClick}
+        >
+          <span className="absolute inset-0 translate-x-0 translate-y-0 rounded bg-green-300 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"></span>
+
+          <span className="relative inline-block border-2 rounded border-current px-8 py-3 text-sm font-bold uppercase tracking-widest">
+            Publicar entrada
+          </span>
+        </button>
+      </div>
       <div>
         <ul role="list" className="flex flex-col gap-10">
           {sortedBlogs.map((blog, index) => (
@@ -92,13 +104,19 @@ const Blog: React.FC = () => {
               key={index}
               className="flex flex-col justify-between p-5 bg-white border border-gray-300 rounded"
             >
-              <div className="flex justify-between">
+              <div className="flex justify-between mb-5 gap-1">
                 <div className="flex min-w-0 gap-x-4">
-                  <div className="min-w-0 flex-auto">
+                  <img
+                    className="h-12 w-12 flex-none rounded-full bg-gray-50 hidden md:block"
+                    src={`https://randomuser.me/api/portraits/men/${index}.jpg`}
+                    alt=""
+                  />
+
+                  <div className="min-w-0 flex-auto flex flex-col justify-center ">
                     <p className="font-semibold leading-6 text-gray-900">
                       {blog.title}
                     </p>
-                    <p className="mb-5 text-sm leading-5 text-gray-500">
+                    <p className=" text-sm leading-5 text-gray-500">
                       Por {blog.author}
                     </p>
                   </div>
