@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         emailjs.sendForm(serviceId, templateId, form, userId).then(
-          (result) => {
+          () => {
             Swal.fire({
               title: "El mensaje ha sido enviado correctamente.",
               icon: "success",
@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
             form.reset();
             setIsSending(false);
           },
-          (error) => {
+          () => {
             Swal.fire({
               title: "Error",
               text: "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.",
