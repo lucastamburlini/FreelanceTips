@@ -9,30 +9,32 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav>
+    <nav className="h-16">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
-          <div className="flex items-center flex-shrink-0">
+          <div className="flex items-center flex-shrink-0 bg-white">
             <span className="text-2xl font-bold text-gray-800">Freelance</span>
-            <span className="text-2xl font-bold text-blue-500">Tips</span>
+            <span className="text-2xl font-bold bg-gradient-to-r from-green-300 via-blue-700 to-purple-600 bg-clip-text text-transparent">
+              Tips
+            </span>
           </div>
           <div className="hidden sm:block text-gray-800">
             <div className="flex space-x-4">
               <Link
                 to={"/"}
-                className="hover:bg-blue-500 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700 bg-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
               >
                 Inicio
               </Link>
               <Link
                 to={"/blog"}
-                className="hover:bg-blue-500 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700 bg-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
               >
                 Blog
               </Link>
               <Link
                 to={"/contact"}
-                className="hover:bg-blue-500 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700 bg-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
               >
                 Contacto
               </Link>
@@ -81,27 +83,27 @@ const NavBar: React.FC = () => {
       </div>
 
       <div
-        className={`${isMenuOpen ? "block" : "hidden"} sm:hidden`}
+        className={`${isMenuOpen ? "block" : "hidden"} sm:hidden bg-white`}
         id="mobile-menu"
       >
         <div className="space-y-1 px-2 pb-3 pt-2">
           <Link
             to={"/"}
-            className="block hover:bg-blue-500 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            className="block hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
             onClick={toggleMenu}
           >
             Inicio
           </Link>
           <Link
             to={"/blog"}
-            className="block hover:bg-blue-500 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            className="block hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
             onClick={toggleMenu}
           >
             Blog
           </Link>
           <Link
             to={"/contact"}
-            className="block hover:bg-blue-500 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            className="block hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
             onClick={toggleMenu}
           >
             Contacto
