@@ -12,8 +12,9 @@ const Footer: React.FC = () => {
                 to={"https://www.linkedin.com/company/hedysoftware/"}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-blue-700 transition-colors duration-200 ease-in-out hover:text-green-300"
               >
-                <span className="text-blue-700">Hedy Software</span>
+                <span>Hedy Software</span>
               </Link>
             </p>
           </div>
@@ -24,6 +25,7 @@ const Footer: React.FC = () => {
                   to={"https://www.linkedin.com/in/lucasgabrieltamburlini/"}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:text-green-300 transition-colors duration-200 ease-in-out"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +45,7 @@ const Footer: React.FC = () => {
                   to={"https://lucastamburlini.vercel.app/"}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:text-green-300 transition-colors duration-200 ease-in-out"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

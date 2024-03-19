@@ -1,9 +1,9 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import Contact from "./components/Contact";
-import Home from "./components/Home";
-import Blog from "./components/Blog";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import Blog from "./pages/Blog";
 import { Suspense } from "react";
 import Footer from "./components/Footer";
 
