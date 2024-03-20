@@ -23,6 +23,9 @@ const Contact: React.FC = () => {
       cancelButtonText: "Cancelar",
       confirmButtonText: "Enviar",
       reverseButtons: true,
+      customClass: {
+        popup: "swal2",
+      },
     }).then((result) => {
       if (result.isConfirmed) {
         emailjs.sendForm(serviceId, templateId, form, userId).then(
@@ -30,6 +33,9 @@ const Contact: React.FC = () => {
             Swal.fire({
               title: "El mensaje ha sido enviado correctamente.",
               icon: "success",
+              customClass: {
+                popup: "swal2",
+              },
             });
             form.reset();
             setIsSending(false);
@@ -39,6 +45,9 @@ const Contact: React.FC = () => {
               title: "Error",
               text: "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.",
               icon: "error",
+              customClass: {
+                popup: "swal2",
+              },
             });
             setIsSending(false);
           }
