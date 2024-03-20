@@ -45,6 +45,7 @@ const Contact: React.FC = () => {
         );
       }
     });
+    setIsSending(false);
   };
 
   return (
