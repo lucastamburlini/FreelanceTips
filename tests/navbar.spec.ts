@@ -9,7 +9,7 @@ test.describe("Navbar component", () => {
     await page.goto(url);
   });
 
-  test("Navigation to blog", async () => {
+  test("navigation to blog", async () => {
     const blogButton = page.locator(
       '//*[@id="root"]/div/nav/div[1]/div/div[2]/div/a[2]'
     );
@@ -18,7 +18,7 @@ test.describe("Navbar component", () => {
     expect(page.url()).toBe(`${url}/blog`);
   });
 
-  test("Navigation to contact", async () => {
+  test("navigation to contact", async () => {
     const contactButton = page.locator(
       '//*[@id="root"]/div/nav/div[1]/div/div[2]/div/a[3]'
     );
@@ -27,7 +27,7 @@ test.describe("Navbar component", () => {
     expect(page.url()).toBe(`${url}/contact`);
   });
 
-  test("Navigation to home", async () => {
+  test("navigation to home", async () => {
     await page.goto(`${url}/blog`);
     const contactButton = page.locator(
       '//*[@id="root"]/div/nav/div[1]/div/div[2]/div/a[1]'

@@ -1,10 +1,21 @@
 # Freelance Tips
 
+- [Descripción del Proyecto](#descripción-del-proyecto)
+- [Despliegue](#despliegue)
+- [Funcionalidades Principales](#funcionalidades-principales)
+- [Tareas asignadas y realizadas](#tareas-asignadas-y-realizadas)
+- [Restricciones tecnológicas](#restricciones-tecnológicas)
+- [Restricciones de trabajo](#restricciones-de-trabajo)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Variables de Entorno](#variables-de-entorno)
+- [Pruebas con Playwright](#pruebas-con-playwright)
+
 ## Descripción del Proyecto
 
 Freelance Tips es una aplicación web que representa una comunidad dedicada a compartir información sobre freelancing con el resto del mundo. La plataforma permite a los usuarios descubrir y compartir consejos prácticos, trucos y estrategias para tener éxito como freelancer en el competitivo mundo laboral actual.
 
-# Despliegue
+## Despliegue
 La aplicación está desplegada en Vercel y puedes acceder a ella en https://freelance-tips.vercel.app/.
 
 ## Funcionalidades Principales
@@ -23,7 +34,7 @@ La aplicación está desplegada en Vercel y puedes acceder a ella en https://fre
 - [x] tiene que haber un Navbar que este presente en todas las rutas de la aplicación y que redirija como minimo a 3 rutas diferentes (Root incluida)
 - [x] Tratar de traer imagenes y recursos desde el internet (hardcodearlo en el codigo y assets locales como ultima opción)
 - [x] Tratar de proporcionarle un diseño estilístico coherente a la aplicación 
-- [x] No utilizar elementos < a > de HTML para el routing puesto que no proporcionan una experiencia de SPA al usuario
+- [x] No utilizar elementos `<a>` de HTML para el routing puesto que no proporcionan una experiencia de SPA al usuario
 
 
 Restricciones tecnológicas:
@@ -55,14 +66,15 @@ Esto iniciará el servidor de desarrollo y podrás acceder a la aplicación en h
 
 El proyecto utiliza las siguientes variables de entorno para la configuración de EmailJS:
 
-EMAILJS_USERID: Tu ID de usuario de EmailJS.
-EMAILJS_SERVICEID: El ID de tu servicio de EmailJS.
-EMAILJS_TEMPLATEID: El ID de la plantilla de EmailJS que deseas utilizar.
+- `EMAILJS_USERID`: Tu ID de usuario de EmailJS.
+- `EMAILJS_SERVICEID`: El ID de tu servicio de EmailJS.
+- `EMAILJS_TEMPLATEID`: El ID de la plantilla de EmailJS que deseas utilizar.
+
 Asegúrate de crear un archivo .env.local en la raíz del proyecto y agregar estas variables de entorno.
 
 # Pruebas con Playwright
 
-Este proyecto utiliza Playwright para realizar pruebas automatizadas. Para ejecutar las pruebas con Playwright, sigue los siguientes pasos:
+Este proyecto utiliza Playwright para realizar pruebas automatizadas, las mismas están divididas por vistas. Para ejecutar las pruebas con Playwright, sigue los siguientes pasos:
 
 Primero, asegúrate de tener todas las dependencias necesarias instaladas. Puedes instalarlas utilizando npm:
 
@@ -70,7 +82,6 @@ Primero, asegúrate de tener todas las dependencias necesarias instaladas. Puede
 npm install
 ```
 
-Ejecución de pruebas
 Para ejecutar las pruebas con Playwright, utiliza el siguiente comando:
 
 ```bash

@@ -9,7 +9,7 @@ test.describe("Contact component", () => {
     await page.goto(url);
   });
 
-  test("Send message", async () => {
+  test("send message", async () => {
     await page.locator('//*[@id="name"]').fill("Nombre de prueba");
     await page.locator('//*[@id="email"]').fill("emaildeprueba@gmail.com");
     await page.locator('//*[@id="phone"]').fill("11 4242 4242");
