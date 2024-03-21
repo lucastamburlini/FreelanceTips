@@ -21,8 +21,6 @@ const DataContext = createContext<DataContextValue | null>(null);
 export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [users, setUsers] = useState<User[]>([]);
   const [posts, setPosts] = useState<Post[]>([]);
-  console.log(users);
-  console.log(posts);
 
   useEffect(() => {
     getUser("https://randomuser.me/api/?results=10").then(

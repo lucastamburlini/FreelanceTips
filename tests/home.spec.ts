@@ -12,16 +12,14 @@ test.describe("Home component", () => {
   test("main title", async () => {
     await expect(
       page.locator('//*[@id="root"]/div/section/div/div/h1')
-    ).toContainText(
-      "Tips y Trucos para Freelancers ¡Haz que tu trabajo cuente!"
-    );
+    ).toContainText("Tips and Tricks for Freelancers Make Your Work Count!");
   });
 
   test("subtitle", async () => {
     await expect(
       page.locator('//*[@id="root"]/div/section/div/div/p')
     ).toContainText(
-      "Descubre y comparte consejos prácticos, trucos y estrategias para tener éxito como freelancer en el competitivo mundo laboral actual."
+      "Discover and share practical tips, tricks, and strategies for succeeding as a freelancer in today's competitive job market."
     );
   });
 
