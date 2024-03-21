@@ -22,21 +22,21 @@ const NavBar: React.FC = () => {
             <div className="flex space-x-4">
               <Link
                 to={"/"}
-                className="hover:bg-blue-700  hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
               >
-                Inicio
+                Home
               </Link>
               <Link
                 to={"/blog"}
-                className="hover:bg-blue-700  hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
               >
                 Blog
               </Link>
               <Link
                 to={"/contact"}
-                className="hover:bg-blue-700  hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
               >
-                Contacto
+                Contact
               </Link>
             </div>
           </div>
@@ -92,7 +92,7 @@ const NavBar: React.FC = () => {
             className="block hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
             onClick={toggleMenu}
           >
-            Inicio
+            Home
           </Link>
           <Link
             to={"/blog"}
@@ -106,7 +106,7 @@ const NavBar: React.FC = () => {
             className="block hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
             onClick={toggleMenu}
           >
-            Contacto
+            Contact
           </Link>
         </div>
       </div>

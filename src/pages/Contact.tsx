@@ -17,11 +17,11 @@ const Contact: React.FC = () => {
     setIsSending(true);
 
     Swal.fire({
-      title: "¿Quieres enviar este mensaje?",
+      title: "Do you want to send this message?",
       icon: "question",
       showCancelButton: true,
-      cancelButtonText: "Cancelar",
-      confirmButtonText: "Enviar",
+      cancelButtonText: "Cancel",
+      confirmButtonText: "Send",
       reverseButtons: true,
       customClass: {
         popup: "swal2",
@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
         emailjs.sendForm(serviceId, templateId, form, userId).then(
           () => {
             Swal.fire({
-              title: "El mensaje ha sido enviado correctamente.",
+              title: "The message has been sent successfully.",
               icon: "success",
               customClass: {
                 popup: "swal2",
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
           () => {
             Swal.fire({
               title: "Error",
-              text: "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.",
+              text: "There was an error sending the message. Please try again.",
               icon: "error",
               customClass: {
                 popup: "swal2",
@@ -63,12 +63,12 @@ const Contact: React.FC = () => {
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div className="lg:col-span-2 lg:py-12">
             <div className="mb-3">
-              <h2 className="text-3xl mb-3">¡Hola!</h2>
+              <h2 className="text-3xl mb-3">Hello!</h2>
               <p className="max-w-xl">
-                Si necesitas contactarme por algún motivo, ya sea para hacer una
-                pregunta o solicitar información, ¡estaré encantado de hablar
-                contigo! Puedes escribirme un mensaje aquí y te responderé lo
-                antes posible. ¡Gracias por ponerte en contacto!
+                If you need to contact me for any reason, whether to ask a
+                question or request information, I'll be happy to talk to you!
+                You can write me a message here and I'll get back to you as soon
+                as possible. Thank you for getting in touch!
               </p>
             </div>
             <div className="flex items-center space-x-4 text-blue-700">
@@ -126,10 +126,10 @@ const Contact: React.FC = () => {
           <div className="bg-white border border-gray-300 rounded p-8 lg:col-span-3 lg:p-12">
             <form onSubmit={sendEmail} className="space-y-4">
               <div>
-                <label className="sr-only">Nombre y apellido</label>
+                <label className="sr-only">Full Name</label>
                 <input
                   className="w-full rounded-lg border-gray-200 p-3 text-sm"
-                  placeholder="Nombre y apellido"
+                  placeholder="Full Name"
                   type="text"
                   id="name"
                   name="name"
@@ -158,7 +158,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input
                     className="w-full rounded-lg border-gray-200 p-3 text-sm"
-                    placeholder="Número de teléfono"
+                    placeholder="Phone Number"
                     type="tel"
                     id="phone"
                     name="phone"
@@ -168,11 +168,11 @@ const Contact: React.FC = () => {
 
               <div>
                 <label className="sr-only" htmlFor="message">
-                  Mensaje...
+                  Message...
                 </label>
                 <textarea
                   className="w-full rounded-lg border-gray-200 p-3 text-sm"
-                  placeholder="Mensaje"
+                  placeholder="Message"
                   id="message"
                   name="message"
                   required
@@ -196,7 +196,7 @@ const Contact: React.FC = () => {
                   >
                     <span className="absolute inset-0 translate-x-0 translate-y-0 rounded bg-green-300 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"></span>
                     <span className="relative inline-block border-2 rounded border-current px-8 py-3 text-sm font-bold uppercase tracking-widest">
-                      Enviar
+                      Send
                     </span>
                   </button>
                 )}

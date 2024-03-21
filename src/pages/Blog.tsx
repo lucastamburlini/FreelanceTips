@@ -16,62 +16,61 @@ const blogs: BlogItem[] = [
     id: uuidv4(),
     author: "Leslie Alexander",
     date: "2023-01-23T13:23Z",
-    title: "Consejos para Freelancers: Cómo Organizar tu Tiempo Efectivamente",
+    title: "Freelancer Tips: How to Organize Your Time Effectively",
     content:
-      "Organizar tu tiempo de manera efectiva es crucial para tener éxito como freelancer. Aquí te compartimos algunos consejos prácticos para lograrlo...",
-    category: "Organización",
-    tags: ["Productividad", "Freelance", "Trabajo Remoto"],
+      "Organizing your time effectively is crucial for success as a freelancer. Here are some practical tips to help you achieve it...",
+    category: "Organization",
+    tags: ["Productivity", "Freelancing", "Remote Work"],
   },
   {
     id: uuidv4(),
     author: "Michael Foster",
     date: "2023-02-15T10:45Z",
-    title: "Herramientas Esenciales para Freelancers de Desarrollo de Software",
+    title: "Essential Tools for Freelance Software Developers",
     content:
-      "Como freelancer de desarrollo de software, contar con las herramientas adecuadas puede marcar la diferencia en tu productividad y calidad de trabajo...",
-    category: "Herramientas",
-    tags: ["Freelance", "Desarrollo de Software", "Productividad"],
+      "As a freelance software developer, having the right tools can make a difference in your productivity and quality of work...",
+    category: "Tools",
+    tags: ["Freelancing", "Software Development", "Productivity"],
   },
   {
     id: uuidv4(),
     author: "Dries Vincent",
     date: "2023-03-05T08:30Z",
-    title: "Diseño Freelance: Principios Básicos de UI/UX",
+    title: "Freelance Design: Basic UI/UX Principles",
     content:
-      "El diseño UI/UX es fundamental para crear experiencias de usuario excepcionales. Conoce los principios básicos que todo diseñador freelance debe dominar...",
-    category: "Diseño",
-    tags: ["Freelance", "UI", "UX", "Diseño Gráfico"],
+      "UI/UX design is crucial for creating exceptional user experiences. Learn the basic principles every freelance designer should master...",
+    category: "Design",
+    tags: ["Freelancing", "UI", "UX", "Graphic Design"],
   },
   {
     id: uuidv4(),
     author: "Lindsay Walton",
     date: "2023-04-10T15:20Z",
-    title: "Cómo Conseguir Clientes como Freelancer de Desarrollo Web",
+    title: "How to Get Clients as a Freelance Web Developer",
     content:
-      "Conseguir clientes es uno de los mayores desafíos para los freelancers de desarrollo web. Descubre estrategias efectivas para atraer y retener clientes...",
-    category: "Clientes",
-    tags: ["Freelance", "Desarrollo Web", "Clientes"],
+      "Getting clients is one of the biggest challenges for freelance web developers. Discover effective strategies to attract and retain clients...",
+    category: "Clients",
+    tags: ["Freelancing", "Web Development", "Clients"],
   },
   {
     id: uuidv4(),
     author: "Courtney Henry",
     date: "2023-05-20T11:10Z",
-    title: "Estrategias de Marketing para Freelancers de Tecnología",
+    title: "Marketing Strategies for Freelance Tech Professionals",
     content:
-      "El marketing es clave para darte a conocer y conseguir proyectos como freelancer de tecnología. Aprende estrategias efectivas para promocionar tus servicios...",
+      "Marketing is key to getting yourself known and getting projects as a freelance tech professional. Learn effective strategies to promote your services...",
     category: "Marketing",
-    tags: ["Freelance", "Tecnología", "Marketing Digital"],
+    tags: ["Freelancing", "Technology", "Digital Marketing"],
   },
   {
     id: uuidv4(),
     author: "Tom Cook",
     date: "2023-06-30T09:05Z",
-    title:
-      "Consejos para Entrevistas como Freelancer de Desarrollo de Software",
+    title: "Tips for Interviews as a Freelance Software Developer",
     content:
-      "Prepararte para una entrevista como freelancer de desarrollo de software puede marcar la diferencia. Descubre consejos prácticos para destacarte en tus entrevistas...",
-    category: "Entrevistas",
-    tags: ["Freelance", "Desarrollo de Software", "Entrevistas"],
+      "Preparing for an interview as a freelance software developer can make a difference. Discover practical tips to stand out in your interviews...",
+    category: "Interviews",
+    tags: ["Freelancing", "Software Development", "Interviews"],
   },
 ];
 
@@ -80,11 +79,11 @@ const sortedBlogs = [...blogs].sort((a, b) => {
 });
 
 const Blog: React.FC = () => {
-  const handleMasClick = () => {
+  const handleMoreClick = () => {
     Swal.fire({
       icon: "warning",
-      title: "En construcción",
-      text: "Esta funcionalidad aún no está disponible.",
+      title: "Under construction",
+      text: "This functionality is not yet available.",
       customClass: {
         popup: "swal2",
       },
@@ -96,12 +95,12 @@ const Blog: React.FC = () => {
       <div className="flex w-full items-center justify-center">
         <button
           className="group relative inline-block focus:outline-none focus:ring-0"
-          onClick={handleMasClick}
+          onClick={handleMoreClick}
         >
           <span className="absolute inset-0 translate-x-0 translate-y-0 rounded bg-green-300 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"></span>
 
           <span className="relative inline-block border-2 rounded border-current px-8 py-3 text-sm font-bold uppercase tracking-widest">
-            Publicar entrada
+            Publish post
           </span>
         </button>
       </div>
@@ -125,7 +124,7 @@ const Blog: React.FC = () => {
                       {blog.title}
                     </p>
                     <p className=" text-sm leading-5 text-gray-500">
-                      Por {blog.author}
+                      By {blog.author}
                     </p>
                   </div>
                 </div>
@@ -135,8 +134,8 @@ const Blog: React.FC = () => {
                   </p>
                   <div className="text-right">
                     <p className="mt-1 text-xs leading-5 text-gray-500">
-                      Publicado el{" "}
-                      {new Date(blog.date).toLocaleDateString("es-ES", {
+                      Published on{" "}
+                      {new Date(blog.date).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "long",
                         day: "numeric",
@@ -163,12 +162,12 @@ const Blog: React.FC = () => {
       <div className="flex w-full items-center justify-center">
         <button
           className="group relative inline-block focus:outline-none focus:ring-0"
-          onClick={handleMasClick}
+          onClick={handleMoreClick}
         >
           <span className="absolute inset-0 translate-x-0 translate-y-0 rounded bg-green-300 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"></span>
 
           <span className="relative inline-block border-2 rounded border-current px-8 py-3 text-sm font-bold uppercase tracking-widest">
-            Ver más entradas
+            See more posts
           </span>
         </button>
       </div>

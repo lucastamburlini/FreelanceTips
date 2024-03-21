@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
@@ -7,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="relative flex gap-10 h-16 items-center justify-between">
           <div className="flex items-center text-sm bg-white p-1">
             <p>
-              Hecho por Lucas Tamburlini en colaboración con{" "}
+              Made by Lucas Tamburlini in collaboration with{" "}
               <Link
                 to={"https://www.linkedin.com/company/hedysoftware/"}
                 target="_blank"
