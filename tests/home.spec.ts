@@ -1,6 +1,6 @@
 import { test, expect, Page, Browser } from "@playwright/test";
 
-test.describe("Home component", () => {
+test.describe("Home view", () => {
   const url = "http://localhost:5173";
   let page: Page;
 
