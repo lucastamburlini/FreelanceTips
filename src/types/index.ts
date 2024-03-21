@@ -1,20 +1,20 @@
 export interface User {
-  id: string;
   firstName: string;
+  id: string;
   lastName: string;
   pictureUrl: string;
 }
 
 export interface Post {
-  postId: string;
-  userId: string;
   author: string;
-  date: string;
-  title: string;
-  content: string;
-  tags: string[];
-  pictureUrl: string;
   category: string;
+  content: string;
+  date: string;
+  pictureUrl: string;
+  postId: string;
+  tags: string[];
+  title: string;
+  userId: string;
 }
 
 export interface RandomUser {
@@ -35,6 +35,6 @@ export interface RandomUserResult {
 }
 
 export interface DataContextValue {
-  users: User[];
   posts: Post[];
+  users: User[];
 }

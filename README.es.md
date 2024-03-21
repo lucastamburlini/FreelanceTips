@@ -34,6 +34,7 @@ La aplicación está desplegada en Vercel y puedes acceder a ella en [https://fr
 - Scroll infinito para los posts y botón "UP!" para volver a la parte superior de la página.
 - Pruebas con Playwright para verificar el correcto funcionamiento del frontend.
 - Posibilidad de enviar un correo electrónico a través de un formulario de contacto para ponerse en contacto conmigo.
+- Contexto utilizado para gestionar la información de los usuarios y los posts.
 
 ## Tareas asignadas y realizadas
 

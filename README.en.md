@@ -34,6 +34,7 @@ The application is deployed on Vercel and can be accessed at [https://freelance-
 - Infinite scroll for posts and "UP!" button to scroll back to the top of the page.
 - Playwright tests to verify the frontend's correct operation.
 - The possibility of sending an email through a contact form to get in touch with me.
+- Context used to manage user and post information.
 
 ## Assigned and Completed Tasks
 
