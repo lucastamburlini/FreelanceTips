@@ -22,6 +22,10 @@ const Blog: React.FC = () => {
     });
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleMorePosts = () => {
     const remainingPosts = totalPosts - showPosts;
     if (remainingPosts > 0) {
@@ -104,14 +108,28 @@ const Blog: React.FC = () => {
         </ul>
       </div>
       {showPosts >= totalPosts ? (
-        <span className="relative flex justify-center bg-white">
-        <div
-          className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"
-        ></div>
-      
-        <span className="relative z-10 bg-white px-6">That's all for now!</span>
-      </span>
+        <div>
+          <span className="relative flex justify-center bg-white">
+            <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
 
+            <span className="relative z-10 bg-white px-6">
+              That's all for now!
+            </span>
+          </span>
+
+          <div className="mt-4 flex flex-wrap justify-center gap-4">
+            <button
+              className="group relative inline-block focus:outline-none focus:ring-0"
+              onClick={handleScrollToTop}
+            >
+              <span className="absolute inset-0 translate-x-1.5 translate-y-1.5 rounded bg-green-300  transition-transform group-hover:translate-x-0 group-hover:translate-y-0 "></span>
+
+              <span className="relative inline-block border-2 rounded border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">
+                Up!
+              </span>
+            </button>
+          </div>
+        </div>
       ) : (
         <div className="flex w-full items-center justify-center">
           <button
