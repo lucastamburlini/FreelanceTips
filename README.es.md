@@ -15,8 +15,13 @@
 
 Freelance Tips es una aplicación web que representa una comunidad dedicada a compartir información sobre freelancing con el resto del mundo. La plataforma permite a los usuarios descubrir y compartir consejos prácticos, trucos y estrategias para tener éxito como freelancer en el competitivo mundo laboral actual.
 
+<font color="green">
+
 ## Despliegue
-La aplicación está desplegada en Vercel y puedes acceder a ella en https://freelance-tips.vercel.app/.
+La aplicación está desplegada en Vercel y puedes acceder a ella en [https://freelance-tips.vercel.app/](https://freelance-tips.vercel.app/).
+
+</font>
+
 
 ## Funcionalidades Principales
 
@@ -26,6 +31,9 @@ La aplicación está desplegada en Vercel y puedes acceder a ella en https://fre
 - Utilización de React (bootstrapped con Vite) como única tecnología.
 - Uso de imágenes y recursos externos (con assets locales como último recurso).
 - No se utilizan elementos `<a>` de HTML para el routing para proporcionar una experiencia de SPA al usuario.
+- Scroll infinito para los posts y botón "UP!" para volver a la parte superior de la página.
+- Pruebas con Playwright para verificar el correcto funcionamiento del frontend.
+- Posibilidad de enviar un correo electrónico a través de un formulario de contacto para ponerse en contacto conmigo.
 
 ## Tareas asignadas y realizadas
 
