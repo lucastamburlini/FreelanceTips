@@ -13,9 +13,9 @@ const Contact: React.FC = () => {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-
+  
     setIsSending(true);
-
+  
     Swal.fire({
       title: "Do you want to send this message?",
       icon: "question",
@@ -38,7 +38,6 @@ const Contact: React.FC = () => {
               },
             });
             form.reset();
-            setIsSending(false);
           },
           () => {
             Swal.fire({
@@ -49,13 +48,16 @@ const Contact: React.FC = () => {
                 popup: "swal2",
               },
             });
-            setIsSending(false);
           }
-        );
+        ).finally(() => {
+          setIsSending(false);
+        });
+      } else {
+        setIsSending(false);
       }
     });
-    setIsSending(false);
   };
+  
 
   return (
     <section className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex items-center justify-center py-14">
@@ -181,14 +183,15 @@ const Contact: React.FC = () => {
 
               <div className="flex w-full items-center justify-center">
                 {isSending ? (
-                  <div
-                    className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-green-300 border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
-                    role="status"
-                  >
-                    <span className="absolute -m-px !h-px w-px overflow-hidden whitespace-nowrap border-0 p-0 [clip:rect(0,0,0,0)]">
-                      Loading...
-                    </span>
-                  </div>
+                <div
+                className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-green-300 border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
+                role="status"
+              >
+                <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                  Loading...
+                </span>
+              </div>
+              
                 ) : (
                   <button
                     type="submit"
