@@ -23,7 +23,7 @@ export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
-    getUser("https://randomuser.me/api/?results=10").then(
+    getUser("https://randomuser.me/api/?results=25").then(
       (data: RandomUser) => {
         const userData = data.results.map((user: RandomUserResult) => ({
           id: user.login.uuid,
