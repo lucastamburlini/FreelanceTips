@@ -70,7 +70,7 @@ El proyecto utiliza las siguientes variables de entorno para la configuración d
 - `EMAILJS_SERVICEID`: El ID de tu servicio de EmailJS.
 - `EMAILJS_TEMPLATEID`: El ID de la plantilla de EmailJS que deseas utilizar.
 
-Asegúrate de crear un archivo .env.local en la raíz del proyecto y agregar estas variables de entorno.
+Asegúrate de crear un archivo `.env.local` en la raíz del proyecto y agregar estas variables de entorno.
 
 # Pruebas con Playwright
 
