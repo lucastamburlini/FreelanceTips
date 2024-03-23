@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
+import { useData } from "../context/userContext";
 
 const Home: React.FC = () => {
+  const { userSession } = useData();
   const navigate = useNavigate();
 
   const handleToBlog = () => {
@@ -14,7 +16,15 @@ const Home: React.FC = () => {
     >
       <div className="flex h-screen w-full items-center">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="bg-gradient-to-r from-green-300 via-blue-700 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl p-5">
+          {!userSession ? (
+            ""
+          ) : (
+            <h2 className="text-1x1 font-bold sm:text-2xl">
+              Hello, {userSession.firstName}! Welcome back.
+            </h2>
+          )}
+
+          <h1 className="bg-gradient-to-r from-green-300 via-blue-700 to-purple-600 bg-clip-text text-2xl font-extrabold text-transparent sm:text-5xl p-5">
             Tips and Tricks for Freelancers Make Your Work Count!
           </h1>
 
