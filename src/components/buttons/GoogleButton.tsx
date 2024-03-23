@@ -9,13 +9,14 @@ import {
 import { appFireBase } from "../../firebase/firebase.js";
 import { useNavigate } from "react-router";
 import { useData } from "../../context/userContext.js";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const auth = getAuth(appFireBase);
 
 const GoogleButton: React.FC = () => {
   const { setUserSession } = useData();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getRedirectResult(auth)
@@ -32,12 +33,15 @@ const GoogleButton: React.FC = () => {
             pictureUrl: user.photoURL || "",
           };
           setUserSession(googleUser);
-          navigate("/");
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       })
+      .finally(() => {
+        setIsLoading(false);
+        navigate("/");
+      });
   }, []);
 
   const googleSignIn = () => {
