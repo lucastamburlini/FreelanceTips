@@ -39,19 +39,19 @@ const NavBar: React.FC = () => {
             <div className="flex space-x-4">
               <Link
                 to={"/"}
-                className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ease-in-out"
               >
                 Home
               </Link>
               <Link
                 to={"/blog"}
-                className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ease-in-out"
               >
                 Blog
               </Link>
               <Link
                 to={"/contact"}
-                className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ease-in-out"
               >
                 Contact
               </Link>
@@ -61,7 +61,7 @@ const NavBar: React.FC = () => {
               ) : (
                 <button
                   onClick={googleSignOut}
-                  className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ease-in-out"
                 >
                   Sign out
                 </button>
@@ -75,7 +75,6 @@ const NavBar: React.FC = () => {
                     aria-expanded="false"
                     aria-haspopup="true"
                   >
-                    <span className="absolute -inset-1.5"></span>
                     <span className="sr-only">Open user menu</span>
                     <img
                       className="h-8 w-8 rounded-full"
@@ -93,7 +92,7 @@ const NavBar: React.FC = () => {
               ) : (
                 <Link
                   to={"/login"}
-                  className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ease-in-out"
                 >
                   Sign in
                 </Link>
