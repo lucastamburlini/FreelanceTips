@@ -33,10 +33,12 @@ La aplicación está desplegada en Vercel y puedes acceder a ella en [https://fr
 - No se utilizan elementos `<a>` de HTML para el routing para proporcionar una experiencia de SPA al usuario.
 - Scroll infinito para los posts y botón "UP!" para volver a la parte superior de la página.
 - Pruebas con Playwright para verificar el correcto funcionamiento del frontend.
-- Posibilidad de enviar un correo electrónico a través de un formulario de contacto para ponerse en contacto conmigo.
-- Contexto utilizado para gestionar la información de los usuarios y los posts.
-- Documentación detallada en español e inglés.
-- Diseño responsive en todas las páginas.
+- Implementación de un formulario de contacto que permite a los usuarios enviar correos electrónicos para comunicarse con el administrador.
+- Documentación detallada disponible en español e inglés para facilitar el uso y la comprensión del proyecto.
+- Diseño responsive en todas las páginas para garantizar una experiencia óptima en diferentes dispositivos.
+- Base de datos de usuarios y posts "ficticios" utilizada para fines de demostración y desarrollo.
+- Funcionalidad de login y logout implementada para gestionar las sesiones de usuario de manera segura con Firebase.
+- Despliegue del proyecto en Vercel para su acceso y visualización pública.
 
 ## Tareas asignadas y realizadas
 

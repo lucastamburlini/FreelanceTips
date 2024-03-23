@@ -21,6 +21,7 @@ const DataContext = createContext<DataContextValue | null>(null);
 export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [users, setUsers] = useState<User[]>([]);
   const [posts, setPosts] = useState<Post[]>([]);
+  const [userSession, setUserSession] = useState<User | null>(null);
 
   useEffect(() => {
     getUser("https://randomuser.me/api/?results=25").then(
@@ -58,7 +59,7 @@ export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   }, []);
 
   return (
-    <DataContext.Provider value={{ users, posts }}>
+    <DataContext.Provider value={{ users, posts, userSession, setUserSession }}>
       {children}
     </DataContext.Provider>
   );

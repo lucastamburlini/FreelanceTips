@@ -37,4 +37,6 @@ export interface RandomUserResult {
 export interface DataContextValue {
   posts: Post[];
   users: User[];
+  userSession?: User | null;
+  setUserSession: React.Dispatch<React.SetStateAction<User | null>>;
 }

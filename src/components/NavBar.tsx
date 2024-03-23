@@ -1,11 +1,28 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useData } from "../context/userContext";
+import { getAuth, signOut } from "firebase/auth";
+import { appFireBase } from "../firebase/firebase";
+
+const auth = getAuth(appFireBase);
 
 const NavBar: React.FC = () => {
+  const { setUserSession } = useData();
+  const { userSession } = useData();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const googleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        setUserSession(null);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -38,6 +55,49 @@ const NavBar: React.FC = () => {
               >
                 Contact
               </Link>
+
+              {!userSession ? (
+                ""
+              ) : (
+                <button
+                  onClick={googleSignOut}
+                  className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  Sign out
+                </button>
+              )}
+
+              {userSession ? (
+                <div>
+                  <div
+                    className="relative flex rounded-full bg-gray-800 text-sm "
+                    id="user-menu-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    <span className="absolute -inset-1.5"></span>
+                    <span className="sr-only">Open user menu</span>
+                    <img
+                      className="h-8 w-8 rounded-full"
+                      src={userSession.pictureUrl}
+                      alt={
+                        userSession.firstName +
+                        " " +
+                        userSession.lastName +
+                        " " +
+                        " image."
+                      }
+                    />
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  to={"/login"}
+                  className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  Sign in
+                </Link>
+              )}
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:hidden">
@@ -108,6 +168,23 @@ const NavBar: React.FC = () => {
           >
             Contact
           </Link>
+
+          {!userSession ? (
+            <Link
+              to={"/login"}
+              className="block hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+              onClick={toggleMenu}
+            >
+              Sign in
+            </Link>
+          ) : (
+            <button
+              onClick={googleSignOut}
+              className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            >
+              Sign out
+            </button>
+          )}
         </div>
       </div>
     </nav>

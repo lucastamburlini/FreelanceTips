@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import { Suspense } from "react";
 import Footer from "./components/Footer";
+import Login from "./pages/Login";
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Suspense>
       {showFooter() && <Footer />}

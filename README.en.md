@@ -33,10 +33,12 @@ The application is deployed on Vercel and can be accessed at [https://freelance-
 - No use of `<a>` HTML elements for routing to provide a SPA (Single Page Application) experience to the user.
 - Infinite scroll for posts and "UP!" button to scroll back to the top of the page.
 - Playwright tests to verify the frontend's correct operation.
-- The possibility of sending an email through a contact form to get in touch with me.
-- Context used to manage user and post information.
-- Detailed documentation in Spanish and English.
-- Responsive design on all pages.
+- Implementation of a contact form allowing users to send emails to the administrator.
+- Detailed documentation available in Spanish and English to facilitate project use and understanding.
+- Responsive design on all pages to ensure an optimal experience on different devices.
+- Mocked user and post database for demonstration and development purposes.
+- Login and logout functionality implemented to manage user sessions securely with Firebase.
+- Deployment of the project on Vercel for public access and viewing.
 
 ## Assigned and Completed Tasks
 
