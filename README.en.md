@@ -35,6 +35,8 @@ The application is deployed on Vercel and can be accessed at [https://freelance-
 - Playwright tests to verify the frontend's correct operation.
 - The possibility of sending an email through a contact form to get in touch with me.
 - Context used to manage user and post information.
+- Detailed documentation in Spanish and English.
+- Responsive design on all pages.
 
 ## Assigned and Completed Tasks
 

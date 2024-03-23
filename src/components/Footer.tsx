@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             </p>
           </div>
           <div className="flex items-center space-x-4 text-blue-700">
-            <ul className="flex gap-4">
+            <ul className="flex gap-4 bg-white">
               <li>
                 <Link
                   to={"https://www.linkedin.com/in/lucasgabrieltamburlini/"}

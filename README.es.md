@@ -35,6 +35,8 @@ La aplicación está desplegada en Vercel y puedes acceder a ella en [https://fr
 - Pruebas con Playwright para verificar el correcto funcionamiento del frontend.
 - Posibilidad de enviar un correo electrónico a través de un formulario de contacto para ponerse en contacto conmigo.
 - Contexto utilizado para gestionar la información de los usuarios y los posts.
+- Documentación detallada en español e inglés.
+- Diseño responsive en todas las páginas.
 
 ## Tareas asignadas y realizadas
 
