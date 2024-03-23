@@ -9,15 +9,13 @@ import {
 import { appFireBase } from "../../firebase/firebase.js";
 import { useNavigate } from "react-router";
 import { useData } from "../../context/userContext.js";
-import { useEffect, useState } from "react";
-import Spinner from "../Spinner.js";
+import { useEffect } from "react";
 
 const auth = getAuth(appFireBase);
 
 const GoogleButton: React.FC = () => {
   const { setUserSession } = useData();
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getRedirectResult(auth)
@@ -40,9 +38,6 @@ const GoogleButton: React.FC = () => {
       .catch((error) => {
         console.log(error);
       })
-      .finally(() => {
-        setIsLoading(false);
-      });
   }, []);
 
   const googleSignIn = () => {
@@ -52,15 +47,12 @@ const GoogleButton: React.FC = () => {
       signInWithRedirect(auth, provider);
     } catch (error) {
       console.log(error);
-      setIsLoading(false);
     }
   };
 
   return (
     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-sm flex w-full items-center justify-center">
-      {isLoading ? (
-        <Spinner />
-      ) : (
+
         <button
           type="submit"
           onClick={googleSignIn}
@@ -71,7 +63,7 @@ const GoogleButton: React.FC = () => {
             Sign in with Google
           </>
         </button>
-      )}
+   
     </div>
   );
 };
