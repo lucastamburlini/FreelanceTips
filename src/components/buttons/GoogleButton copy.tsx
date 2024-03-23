@@ -1,14 +1,13 @@
 import googleLogo from "../../assets/google.png";
 import {
   GoogleAuthProvider,
-  onAuthStateChanged,
+  UserCredential,
   getAuth,
-  signInWithRedirect,
+  signInWithPopup,
 } from "firebase/auth";
 import { appFireBase } from "../../firebase/firebase.js";
 import { useNavigate } from "react-router";
 import { useData } from "../../context/userContext.js";
-import { useEffect } from "react";
 
 const auth = getAuth(appFireBase);
 
@@ -16,33 +15,30 @@ const GoogleButton: React.FC = () => {
   const { setUserSession } = useData();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const displayNameParts = user.displayName
-          ? user.displayName.split(" ")
-          : [];
-        const googleUser = {
-          firstName: displayNameParts[0] || "",
-          id: user.uid,
-          lastName: displayNameParts[1] || "",
-          pictureUrl: user.photoURL || "",
-        };
-        setUserSession(googleUser);
-        navigate("/");
-      }
-    });
-
-    return () => unsubscribe();
-  }, [auth, setUserSession, navigate]);
-
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
 
     try {
-      signInWithRedirect(auth, provider);
+      signInWithPopup(auth, provider)
+        .then((result: UserCredential) => {
+          const user = result.user;
+          const displayNameParts = user.displayName
+            ? user.displayName.split(" ")
+            : [];
+          const googleUser = {
+            firstName: displayNameParts[0] || "",
+            id: user.uid,
+            lastName: displayNameParts[1] || "",
+            pictureUrl: user.photoURL || "",
+          };
+          setUserSession(googleUser);
+          navigate("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
