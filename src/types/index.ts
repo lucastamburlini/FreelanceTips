@@ -35,8 +35,24 @@ export interface RandomUserResult {
 }
 
 export interface DataContextValue {
-  posts: Post[];
+  mockPosts: Post[];
   users: User[];
   userSession?: User | null;
   setUserSession: React.Dispatch<React.SetStateAction<User | null>>;
+}
+
+export interface PostsContextValue {
+  posts: Post[];
+  newPost: (post: Post) => void;
+}
+
+export interface PrimaryButtonProps {
+  onClick?: () => void;
+  text: string;
+}
+
+export interface SecondaryButtonProps {
+  onClick?: () => void;
+  text: string;
+  type?: string;
 }

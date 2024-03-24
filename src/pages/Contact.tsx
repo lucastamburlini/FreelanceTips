@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import Spinner from "../components/Spinner";
+import SecondaryButton from "../components/buttons/SecondaryButton";
 
 const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -133,7 +134,7 @@ const Contact: React.FC = () => {
               <div>
                 <label className="sr-only">Full Name</label>
                 <input
-                  className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                  className="w-full rounded-lg border border-gray-300 p-3 text-sm"
                   placeholder="Full Name"
                   type="text"
                   id="name"
@@ -148,7 +149,7 @@ const Contact: React.FC = () => {
                     Email
                   </label>
                   <input
-                    className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                    className="w-full rounded-lg border border-gray-300 p-3 text-sm"
                     placeholder="Email"
                     type="email"
                     id="email"
@@ -162,7 +163,7 @@ const Contact: React.FC = () => {
                     Phone
                   </label>
                   <input
-                    className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                    className="w-full rounded-lg border border-gray-300 p-3 text-sm"
                     placeholder="Phone Number"
                     type="tel"
                     id="phone"
@@ -176,7 +177,7 @@ const Contact: React.FC = () => {
                   Message...
                 </label>
                 <textarea
-                  className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                  className="w-full rounded-lg border border-gray-300 p-3 text-sm"
                   placeholder="Message"
                   id="message"
                   name="message"
@@ -188,15 +189,7 @@ const Contact: React.FC = () => {
                 {isSending ? (
                   <Spinner />
                 ) : (
-                  <button
-                    type="submit"
-                    className="group relative inline-block focus:outline-none focus:ring-0"
-                  >
-                    <span className="absolute inset-0 translate-x-0 translate-y-0 rounded bg-green-300 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"></span>
-                    <span className="relative inline-block border-2 rounded border-current px-8 py-3 text-sm font-bold uppercase tracking-widest">
-                      Send
-                    </span>
-                  </button>
+                  <SecondaryButton type={"submit"} text={"send"} />
                 )}
               </div>
             </form>

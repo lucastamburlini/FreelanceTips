@@ -20,11 +20,11 @@ const DataContext = createContext<DataContextValue | null>(null);
 
 export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [users, setUsers] = useState<User[]>([]);
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [mockPosts, setMockPosts] = useState<Post[]>([]);
   const [userSession, setUserSession] = useState<User | null>(null);
 
   useEffect(() => {
-    getUser("https://randomuser.me/api/?results=25").then(
+    getUser("https://randomuser.me/api/?results=15").then(
       (data: RandomUser) => {
         const userData = data.results.map((user: RandomUserResult) => ({
           id: user.login.uuid,
@@ -53,13 +53,13 @@ export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
           randomPosts.push(post);
         }
 
-        setPosts(randomPosts);
+        setMockPosts(randomPosts);
       }
     );
   }, []);
 
   return (
-    <DataContext.Provider value={{ users, posts, userSession, setUserSession }}>
+    <DataContext.Provider value={{ users, mockPosts, userSession, setUserSession }}>
       {children}
     </DataContext.Provider>
   );

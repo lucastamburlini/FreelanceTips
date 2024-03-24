@@ -1,17 +1,20 @@
 import Swal from "sweetalert2";
 import { useData } from "../context/userContext";
 import { useEffect, useState } from "react";
+import PrimaryButton from "../components/buttons/PrimaryButton";
+import SecondaryButton from "../components/buttons/SecondaryButton";
+import NewPost from "../components/NewPost";
 
 const Blog: React.FC = () => {
-  const { posts } = useData();
+  const { mockPosts } = useData();
   const [showPosts, setShowPosts] = useState<number>(10);
-  const [totalPosts, setTotalPosts] = useState<number>(posts.length);
+  const [totalPosts, setTotalPosts] = useState<number>(mockPosts.length);
 
-  const sortedPost = [...posts].slice(0, showPosts).sort((a, b) => {
+  const sortedPost = [...mockPosts].slice(0, showPosts).sort((a, b) => {
     return Number(a.date) - Number(b.date);
   });
 
-  const handleConstruction = () => {
+  /*   const handleConstruction = () => {
     Swal.fire({
       icon: "warning",
       title: "Under construction",
@@ -20,7 +23,7 @@ const Blog: React.FC = () => {
         popup: "swal2",
       },
     });
-  };
+  }; */
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -35,23 +38,13 @@ const Blog: React.FC = () => {
   };
 
   useEffect(() => {
-    setTotalPosts(posts.length);
-  }, [posts.length]);
+    setTotalPosts(mockPosts.length);
+  }, [mockPosts.length]);
 
   return (
     <section className="mx-auto py-14 max-w-7xl px-2 sm:px-6 lg:px-8 flex flex-col gap-10">
-      <div className="flex w-full items-center justify-center">
-        <button
-          className="group relative inline-block focus:outline-none focus:ring-0"
-          onClick={handleConstruction}
-        >
-          <span className="absolute inset-0 translate-x-0 translate-y-0 rounded bg-green-300 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"></span>
+      <NewPost />
 
-          <span className="relative inline-block border-2 rounded border-current px-8 py-3 text-sm font-bold uppercase tracking-widest">
-            Publish post
-          </span>
-        </button>
-      </div>
       <div>
         <ul role="list" className="flex flex-col gap-10">
           {sortedPost.map((post, index) => (
@@ -117,18 +110,7 @@ const Blog: React.FC = () => {
             </span>
           </span>
 
-          <div className="mt-4 flex flex-wrap justify-center gap-4">
-            <button
-              className="group relative inline-block focus:outline-none focus:ring-0"
-              onClick={handleScrollToTop}
-            >
-              <span className="absolute inset-0 translate-x-1.5 translate-y-1.5 rounded bg-green-300  transition-transform group-hover:translate-x-0 group-hover:translate-y-0 "></span>
-
-              <span className="relative inline-block border-2 rounded border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">
-                Up!
-              </span>
-            </button>
-          </div>
+          <PrimaryButton text={"Up!"} onClick={handleScrollToTop} />
         </div>
       ) : (
         <div className="flex w-full items-center justify-center">
