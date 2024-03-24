@@ -24,7 +24,7 @@ export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [userSession, setUserSession] = useState<User | null>(null);
 
   useEffect(() => {
-    getUser("https://randomuser.me/api/?results=1").then(
+    getUser("https://randomuser.me/api/?results=11").then(
       (data: RandomUser) => {
         const userData = data.results.map((user: RandomUserResult) => ({
           id: user.login.uuid,
