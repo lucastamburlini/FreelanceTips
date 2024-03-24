@@ -24,7 +24,7 @@ export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [userSession, setUserSession] = useState<User | null>(null);
 
   useEffect(() => {
-    getUser("https://randomuser.me/api/?results=15").then(
+    getUser("https://randomuser.me/api/?results=1").then(
       (data: RandomUser) => {
         const userData = data.results.map((user: RandomUserResult) => ({
           id: user.login.uuid,
@@ -48,7 +48,6 @@ export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
             title: faker.lorem.words(3),
             category: faker.lorem.words(1),
             content: faker.lorem.paragraphs(3),
-            tags: ["tag1", "tag2", "tag3"],
           };
           randomPosts.push(post);
         }

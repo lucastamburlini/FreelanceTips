@@ -12,7 +12,6 @@ export interface Post {
   date: string;
   pictureUrl: string;
   postId: string;
-  tags: string[];
   title: string;
   userId: string;
 }

@@ -1,28 +1,21 @@
-/* import Swal from "sweetalert2"; */
 import { useData } from "../context/userContext";
 import { useEffect, useState } from "react";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import NewPost from "../components/NewPost";
+import { usePosts } from "../context/postContext";
 
 const Blog: React.FC = () => {
   const { mockPosts } = useData();
+  const { posts } = usePosts();
   const [showPosts, setShowPosts] = useState<number>(10);
   const [totalPosts, setTotalPosts] = useState<number>(mockPosts.length);
 
-  const sortedPost = [...mockPosts].slice(0, showPosts).sort((a, b) => {
-    return Number(a.date) - Number(b.date);
-  });
+  const sortedPost = [...mockPosts, ...posts]
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, showPosts);
 
-  /*   const handleConstruction = () => {
-    Swal.fire({
-      icon: "warning",
-      title: "Under construction",
-      text: "This functionality is not yet available.",
-      customClass: {
-        popup: "swal2",
-      },
-    });
-  }; */
+  console.log(sortedPost);
+  
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -89,11 +82,6 @@ const Blog: React.FC = () => {
                 <p className="mt-1  leading-5 text-gray-500 mb-5">
                   {post.content}
                 </p>
-                <div className="flex gap-2 text-xs leading-5 text-gray-500">
-                  {post.tags.map((tag, index) => (
-                    <span key={index}>#{tag}</span>
-                  ))}
-                </div>
               </div>
             </li>
           ))}
