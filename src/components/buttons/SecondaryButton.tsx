@@ -1,8 +1,13 @@
 import { SecondaryButtonProps } from "../../types";
 
-const SecondaryButton: React.FC<SecondaryButtonProps> = ({ onClick, text , type}) => {
+const SecondaryButton: React.FC<SecondaryButtonProps> = ({
+  onClick,
+  text,
+  type,
+}) => {
   return (
     <button
+      type={type}
       onClick={onClick}
       className="group relative inline-block focus:outline-none focus:ring-0"
     >

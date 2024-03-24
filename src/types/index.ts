@@ -54,5 +54,5 @@ export interface PrimaryButtonProps {
 export interface SecondaryButtonProps {
   onClick?: () => void;
   text: string;
-  type?: string;
+  type?: "button" | "reset" | "submit";
 }
