@@ -25,20 +25,22 @@ The application is deployed on Vercel and can be accessed at [https://freelance-
 
 ## Key Features
 
-- Root page that describes the web platform.
-- Navbar present on all routes with links to at least 3 different routes.
-- Coherent stylistic design throughout the application.
-- Use of React (bootstrapped with Vite) as the sole technology.
-- Use of images and external resources (with local assets as a last resort).
-- No use of `<a>` HTML elements for routing to provide a SPA (Single Page Application) experience to the user.
-- Infinite scroll for posts and "UP!" button to scroll back to the top of the page.
-- Playwright tests to verify the frontend's correct operation.
-- Implementation of a contact form allowing users to send emails to the administrator.
-- Detailed documentation available in Spanish and English to facilitate project use and understanding.
-- Responsive design on all pages to ensure an optimal experience on different devices.
-- Mocked user and post database for demonstration and development purposes.
-- Login and logout functionality implemented to manage user sessions securely with Firebase.
-- Deployment of the project on Vercel for public access and viewing.
+- The homepage (Root) describes the web platform.
+- A Navbar is included on all routes with links to at least 3 or more different routes.
+- The stylistic design is consistent throughout the application.
+- React is used as the sole technology (bootstrapped with Vite).
+- Images and external resources are used, with local assets as a last resort.
+- HTML <a> elements are not used for routing, providing a SPA experience to the user.
+- Infinite scroll is implemented for posts and a "UP!" button to scroll back to the top of the page.
+- Tests are conducted with Playwright to verify the frontend's correct operation.
+- A contact form is integrated, allowing users to send emails to communicate with the administrator.
+- Detailed documentation is available in Spanish and English to facilitate the use and understanding of the project.
+- The design is responsive on all pages to ensure an optimal experience on different devices.
+- A fictitious database is used for users and posts for demonstration and development purposes.
+- Login and logout functionality is implemented to manage user sessions securely with Firebase.
+- The project is deployed on Vercel for public access and viewing.
+- Reusable primary and secondary buttons are used.
+- A global context is implemented to manage user and post information throughout the application.
 
 ## Assigned and Completed Tasks
 

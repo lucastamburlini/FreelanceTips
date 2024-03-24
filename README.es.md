@@ -25,20 +25,22 @@ La aplicación está desplegada en Vercel y puedes acceder a ella en [https://fr
 
 ## Funcionalidades Principales
 
-- Página de inicio (Root) que describe la plataforma web.
-- Navbar presente en todas las rutas con enlaces a al menos 3 diferentes rutas.
-- Diseño estilístico coherente en toda la aplicación.
-- Utilización de React (bootstrapped con Vite) como única tecnología.
-- Uso de imágenes y recursos externos (con assets locales como último recurso).
-- No se utilizan elementos `<a>` de HTML para el routing para proporcionar una experiencia de SPA al usuario.
-- Scroll infinito para los posts y botón "UP!" para volver a la parte superior de la página.
-- Pruebas con Playwright para verificar el correcto funcionamiento del frontend.
-- Implementación de un formulario de contacto que permite a los usuarios enviar correos electrónicos para comunicarse con el administrador.
-- Documentación detallada disponible en español e inglés para facilitar el uso y la comprensión del proyecto.
-- Diseño responsive en todas las páginas para garantizar una experiencia óptima en diferentes dispositivos.
-- Base de datos de usuarios y posts "ficticios" utilizada para fines de demostración y desarrollo.
-- Funcionalidad de login y logout implementada para gestionar las sesiones de usuario de manera segura con Firebase.
-- Despliegue del proyecto en Vercel para su acceso y visualización pública.
+- La página de inicio (Root) describe la plataforma web.
+- Se incluye una Navbar en todas las rutas con enlaces a al menos 3 o más diferentes rutas.
+- El diseño estilístico es coherente en toda la aplicación.
+- Se utiliza React (bootstrapped con Vite) como única tecnología.
+- Se emplean imágenes y recursos externos, utilizando assets locales como último recurso.
+- No se utilizan elementos `<a>` de HTML para el routing, ofreciendo una experiencia de SPA al usuario.
+- Se implementa scroll infinito para los posts y un botón "UP!" para volver a la parte superior de la página.
+- Se realizan pruebas con Playwright para verificar el correcto funcionamiento del frontend.
+- Se integra un formulario de contacto que permite a los usuarios enviar correos electrónicos para comunicarse con el administrador.
+- La documentación detallada está disponible en español e inglés para facilitar el uso y la comprensión del proyecto.
+- El diseño es responsive en todas las páginas para garantizar una experiencia óptima en diferentes dispositivos.
+- Se utiliza una base de datos ficticia para usuarios y posts con fines de demostración y desarrollo.
+- Se implementa la funcionalidad de login y logout para gestionar las sesiones de usuario de manera segura con Firebase.
+- El proyecto se despliega en Vercel para su acceso y visualización pública.
+- Se utilizan botones primarios y secundarios reutilizables.
+- Se implementa un contexto global para gestionar la información de usuario y posts en toda la aplicación.
 
 ## Tareas asignadas y realizadas
 
