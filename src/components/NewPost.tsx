@@ -6,6 +6,7 @@ import PrimaryButton from "./buttons/PrimaryButton";
 import { useData } from "../context/userContext";
 import { v4 } from "uuid";
 import { usePosts } from "../context/postContext";
+import { PostData } from "../types";
 
 const NewPost: React.FC = () => {
   const { userSession } = useData();
@@ -19,16 +20,7 @@ const NewPost: React.FC = () => {
   const userId = userSession?.id || "";
   const currentDate = new Date().toString();
 
-  const [dataPost, setDataPost] = useState<{
-    author: string;
-    category: string;
-    content: string;
-    date: string;
-    pictureUrl: string;
-    postId: string;
-    title: string;
-    userId: string;
-  }>({
+  const [dataPost, setDataPost] = useState<PostData>({
     author: `${userFirstName} ${userLastName}`,
     category: "",
     content: "",

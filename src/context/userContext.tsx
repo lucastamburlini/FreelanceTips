@@ -21,7 +21,9 @@ const DataContext = createContext<DataContextValue | null>(null);
 export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [users, setUsers] = useState<User[]>([]);
   const [mockPosts, setMockPosts] = useState<Post[]>([]);
-  const [userSession, setUserSession] = useState<User | null>(null);
+  const [userSession, setUserSession] = useState<User | null>(() => {
+    return JSON.parse(localStorage.getItem("userSession") || "null");
+  });
 
   useEffect(() => {
     getUser("https://randomuser.me/api/?results=11").then(
@@ -58,7 +60,9 @@ export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   }, []);
 
   return (
-    <DataContext.Provider value={{ users, mockPosts, userSession, setUserSession }}>
+    <DataContext.Provider
+      value={{ users, mockPosts, userSession, setUserSession }}
+    >
       {children}
     </DataContext.Provider>
   );

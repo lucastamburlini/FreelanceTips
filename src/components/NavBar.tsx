@@ -7,17 +7,22 @@ import { appFireBase } from "../firebase/firebase";
 const auth = getAuth(appFireBase);
 
 const NavBar: React.FC = () => {
-  const { setUserSession } = useData();
-  const { userSession } = useData();
+  const { userSession, setUserSession } = useData();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuProfileOpen, setIsMenuProfileOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const toggleMenuProfile = () => {
+    setIsMenuProfileOpen(!isMenuProfileOpen);
+  };
+
   const googleSignOut = () => {
     signOut(auth)
       .then(() => {
+        localStorage.removeItem("userSession");
         setUserSession(null);
       })
       .catch((error) => {
@@ -56,38 +61,41 @@ const NavBar: React.FC = () => {
                 Contact
               </Link>
 
-              {!userSession ? (
-                ""
-              ) : (
-                <button
-                  onClick={googleSignOut}
-                  className="hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ease-in-out"
-                >
-                  Sign out
-                </button>
-              )}
-
               {userSession ? (
-                <div>
-                  <div
-                    className="relative flex rounded-full bg-gray-800 text-sm "
-                    id="user-menu-button"
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                  >
-                    <span className="sr-only">Open user menu</span>
-                    <img
-                      className="h-8 w-8 rounded-full"
-                      src={userSession.pictureUrl}
-                      alt={
-                        userSession.firstName +
-                        " " +
-                        userSession.lastName +
-                        " " +
-                        " image."
-                      }
-                    />
+                <div className="flex items-center">
+                  <div>
+                    <button
+                      type="button"
+                      className="relative flex rounded-full border-2 border-transparent text-sm hover:border-blue-500 transition-colors duration-200 ease-in-out"
+                      id="user-menu-button"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      onClick={toggleMenuProfile}
+                    >
+                      <div className="relative h-8 w-8 flex rounded-full bg-gray-800 text-sm">
+                        <img
+                          className="h-8 w-8 rounded-full"
+                          src={userSession.pictureUrl}
+                          alt={`${userSession.firstName} ${userSession.lastName} image.`}
+                        />
+                      </div>
+                    </button>
                   </div>
+                  {isMenuProfileOpen && (
+                    <div
+                      className="absolute top-14 right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="user-menu-button"
+                    >
+                      <button
+                        onClick={googleSignOut}
+                        className="block px-4 py-2 text-sm text-gray-700"
+                      >
+                        Sing out
+                      </button>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <Link

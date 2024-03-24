@@ -55,3 +55,14 @@ export interface SecondaryButtonProps {
   text: string;
   type?: "button" | "reset" | "submit";
 }
+
+export interface PostData {
+  author: string;
+  category: string;
+  content: string;
+  date: string;
+  pictureUrl: string;
+  postId: string;
+  title: string;
+  userId: string;
+}

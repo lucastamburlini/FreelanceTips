@@ -4,6 +4,8 @@ import {
   onAuthStateChanged,
   getAuth,
   signInWithRedirect,
+  setPersistence,
+  browserLocalPersistence,
 } from "firebase/auth";
 import { appFireBase } from "../../firebase/firebase.js";
 import { useNavigate } from "react-router";
@@ -31,6 +33,7 @@ const GoogleButton: React.FC = () => {
           lastName: displayNameParts[1] || "",
           pictureUrl: user.photoURL || "",
         };
+        localStorage.setItem("userSession", JSON.stringify(googleUser));
         setUserSession(googleUser);
 
         navigate("/");
@@ -40,14 +43,14 @@ const GoogleButton: React.FC = () => {
     });
 
     return () => unsubscribe();
-  }, [auth, setUserSession, navigate]);
+  }, [setUserSession]);
 
-  const googleSignIn = () => {
-    const provider = new GoogleAuthProvider();
-
+  const googleSignIn = async () => {
     try {
       setLoading(true);
-      signInWithRedirect(auth, provider);
+      await setPersistence(auth, browserLocalPersistence);
+      const provider = new GoogleAuthProvider();
+      await signInWithRedirect(auth, provider);
     } catch (error) {
       console.error(error);
     }
