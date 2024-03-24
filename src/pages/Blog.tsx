@@ -1,8 +1,7 @@
-import Swal from "sweetalert2";
+/* import Swal from "sweetalert2"; */
 import { useData } from "../context/userContext";
 import { useEffect, useState } from "react";
 import PrimaryButton from "../components/buttons/PrimaryButton";
-import SecondaryButton from "../components/buttons/SecondaryButton";
 import NewPost from "../components/NewPost";
 
 const Blog: React.FC = () => {
