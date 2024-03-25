@@ -30,7 +30,7 @@ The application is deployed on Vercel and can be accessed at [https://freelance-
 - The stylistic design is consistent throughout the application.
 - React is used as the sole technology (bootstrapped with Vite).
 - Images and external resources are used, with local assets as a last resort.
-- HTML <a> elements are not used for routing, providing a SPA experience to the user.
+- HTML `<a>` elements are not used for routing, providing a SPA experience to the user.
 - Infinite scroll is implemented for posts and a "UP!" button to scroll back to the top of the page.
 - Tests are conducted with Playwright to verify the frontend's correct operation.
 - A contact form is integrated, allowing users to send emails to communicate with the administrator.
@@ -99,16 +99,25 @@ First, make sure you have all the necessary dependencies installed. You can inst
 npm install
 ```
 
-To run the tests with Playwright, use the following command:
+Run the application in a local environment using the following command:
+
+```bash
+npm run dev
+```
+
+**Important!**
+Log in to the application with your Google account.
+
+Run the tests with Playwright, using the following command:
 
 ```bash
 npx playwright test
 ```
 
-This command will run the automated tests and open a browser to display the process. You can also view the test results in the console.
+This command will run the automated tests and open a browser to show the process. You can also view the test results in the console.
 
 ```bash
 npx playwright show-report
 ```
 
-This will open a browser with a detailed report of the tests, where you can see information about the test cases, results, and any errors encountered.
+This will open a browser with the detailed report of the tests, where you can see information about the test cases, results and errors found.

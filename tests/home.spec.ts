@@ -23,7 +23,7 @@ test.describe("Home view", () => {
     );
   });
 
-  test("primary button: to blog", async () => {
+  test("button to blog", async () => {
     const button = page.locator(
       '//*[@id="root"]/div/section/div/div/div/button'
     );

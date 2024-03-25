@@ -17,11 +17,13 @@ function App() {
     return ["/"].includes(location.pathname);
   };
 
-  const ProtectedLoginRoute = () => {
+  const ProtectedRoute: React.FC<{ element: React.ReactNode }> = ({
+    element,
+  }) => {
     if (userSession) {
-      return <Navigate to="/" />;
+      return <>{element}</>;
     } else {
-      return <Login />;
+      return <Navigate to="/login" replace />;
     }
   };
 
@@ -31,9 +33,12 @@ function App() {
       <Suspense fallback={"Cargando..."}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<ProtectedLoginRoute />} />
+          <Route path="/blog" element={<ProtectedRoute element={<Blog />} />} />
+          <Route
+            path="/contact"
+            element={<ProtectedRoute element={<Contact />} />}
+          />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Suspense>
       {showFooter() && <Footer />}

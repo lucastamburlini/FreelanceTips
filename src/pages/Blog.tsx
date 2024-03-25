@@ -12,10 +12,7 @@ const Blog: React.FC = () => {
 
   const sortedPost = [...mockPosts, ...posts]
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  .slice(0, showPosts);
-
-  console.log(sortedPost);
-  
+  .slice(0, showPosts);  
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

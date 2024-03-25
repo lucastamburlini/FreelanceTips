@@ -99,7 +99,16 @@ Primero, asegúrate de tener todas las dependencias necesarias instaladas. Puede
 npm install
 ```
 
-Para ejecutar las pruebas con Playwright, utiliza el siguiente comando:
+Ejecutar aplicación en un entorno local utilizando el siguiente comando:
+
+```bash
+npm run dev
+```
+
+**¡Importante!** 
+Inicia sesión en la aplicación con tu cuenta de Google.
+
+Ejecuta las pruebas con Playwright, utiliza el siguiente comando:
 
 ```bash
 npx playwright test

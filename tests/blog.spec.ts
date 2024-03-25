@@ -45,4 +45,31 @@ test.describe("Blog view", () => {
       0
     );
   });
+
+  test("new post", async () => {
+    const buttonNewPost = await page.waitForSelector(
+      '//*[@id="root"]/div/section/div[1]/div/div/button'
+    );
+    await buttonNewPost.click();
+
+    await page.waitForSelector('//*[@id="title"]');
+    await page.locator('//*[@id="title"]').fill("Test");
+    await page.waitForSelector('//*[@id="category"]');
+    await page.selectOption('//*[@id="category"]', { label: "Tools" });
+    await page.waitForSelector('//*[@id="content"]');
+    await page.locator('//*[@id="content"]').fill("Test");
+
+    const buttonSendPost = await page.waitForSelector(
+      '//*[@id="root"]/div/section/div[1]/div[2]/div/div[3]/button'
+    );
+    await buttonSendPost.click();
+    await page.waitForSelector("button.swal2-confirm.swal2-styled");
+    const buttonSend = page.locator("button.swal2-confirm.swal2-styled");
+    await buttonSend.click();
+
+    await page.waitForSelector("button.swal2-confirm.swal2-styled");
+    const buttonEnd = page.locator("button.swal2-confirm.swal2-styled");
+    await buttonEnd.click();
+    await page.waitForTimeout(2000);
+  });
 });
