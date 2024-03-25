@@ -37,10 +37,11 @@ The application is deployed on Vercel and can be accessed at [https://freelance-
 - Detailed documentation is available in Spanish and English to facilitate the use and understanding of the project.
 - The design is responsive on all pages to ensure an optimal experience on different devices.
 - A fictitious database is used for users and posts for demonstration and development purposes.
-- Login and logout functionality is implemented to manage user sessions securely with Firebase.
+- Login and logout functionality is implemented to manage user sessions securely with Firebase, including data persistence to keep the session active.
 - The project is deployed on Vercel for public access and viewing.
 - Reusable primary and secondary buttons are used.
 - A global context is implemented to manage user and post information throughout the application.
+- Functionality to create and upload publications locally.
 
 ## Assigned and Completed Tasks
 

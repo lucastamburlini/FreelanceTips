@@ -18,10 +18,10 @@ Freelance Tips es una aplicación web que representa una comunidad dedicada a co
 <font color="green">
 
 ## Despliegue
+
 La aplicación está desplegada en Vercel y puedes acceder a ella en [https://freelance-tips.vercel.app/](https://freelance-tips.vercel.app/).
 
 </font>
-
 
 ## Funcionalidades Principales
 
@@ -37,43 +37,45 @@ La aplicación está desplegada en Vercel y puedes acceder a ella en [https://fr
 - La documentación detallada está disponible en español e inglés para facilitar el uso y la comprensión del proyecto.
 - El diseño es responsive en todas las páginas para garantizar una experiencia óptima en diferentes dispositivos.
 - Se utiliza una base de datos ficticia para usuarios y posts con fines de demostración y desarrollo.
-- Se implementa la funcionalidad de login y logout para gestionar las sesiones de usuario de manera segura con Firebase.
+- Se implementa la funcionalidad de login y logout para gestionar las sesiones de usuario de manera segura con Firebase, incluyendo persistencia de datos para mantener la sesión activa.
 - El proyecto se despliega en Vercel para su acceso y visualización pública.
 - Se utilizan botones primarios y secundarios reutilizables.
 - Se implementa un contexto global para gestionar la información de usuario y posts en toda la aplicación.
+- Funcionalidad para crear y subir publicaciones de forma local.
 
 ## Tareas asignadas y realizadas
 
-- [x] Crear una aplicacion web que represente una comunidad dedicada a compartir información con el resto del mundo (puede ser sobre cualquier topico que elija el estudiante)  
+- [x] Crear una aplicacion web que represente una comunidad dedicada a compartir información con el resto del mundo (puede ser sobre cualquier topico que elija el estudiante)
 - [x] Tiene que tener una pagina Root que hable sobre la plataforma web
 - [x] tiene que haber un Navbar que este presente en todas las rutas de la aplicación y que redirija como minimo a 3 rutas diferentes (Root incluida)
 - [x] Tratar de traer imagenes y recursos desde el internet (hardcodearlo en el codigo y assets locales como ultima opción)
-- [x] Tratar de proporcionarle un diseño estilístico coherente a la aplicación 
+- [x] Tratar de proporcionarle un diseño estilístico coherente a la aplicación
 - [x] No utilizar elementos `<a>` de HTML para el routing puesto que no proporcionan una experiencia de SPA al usuario
-
 
 Restricciones tecnológicas:
 
 - [x] Si o si se debe utilizar React (bootstrapeado con Vite )
 - [x] No crear un servidor externo a la aplicación
 
-Restricciones de trabajo: 
+Restricciones de trabajo:
 
 - [x] Tiene que ser realizado individualmente
 
 ## Instalación
+
 Para instalar las dependencias del proyecto, ejecuta:
 
 ```bash
 npm install
-``` 
+```
 
 ## Uso
+
 Para ejecutar la aplicación en un entorno local, utiliza el siguiente comando:
 
 ```bash
 npm run dev
-``` 
+```
 
 Esto iniciará el servidor de desarrollo y podrás acceder a la aplicación en http://localhost:5173 o tu puerto de preferencia.
 
